@@ -1,0 +1,9 @@
+Debug
+.vs
+/emu/Release
+*.ncb
+*.opt
+*.plg
+/emu/ReadMe.txt
+*.log
+*.APS
