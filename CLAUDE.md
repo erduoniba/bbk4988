@@ -11,6 +11,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 构建命令
 
+### 项目管理脚本
+
+**iOS构建和签名：**
+```bash
+./scripts/build-ios.sh
+```
+
+**项目清理：**
+```bash
+./scripts/clean.sh
+```
+
 ### gam4980 libretro核心
 
 **使用Zig构建（推荐）：**
@@ -38,6 +50,17 @@ gcc -std=c11 -Wall -O3 -fpic -shared -o gam4980_libretro.so libretro.c
 ```
 
 ## 项目架构
+
+### 目录结构
+- `scripts/` - 构建和管理脚本
+  - `build-ios.sh` - iOS RetroArch构建和签名脚本
+  - `clean.sh` - 项目清理脚本
+  - `fix_*.sh` - 各种修复脚本（已整理）
+- `docs/` - 项目文档
+  - `ios/` - iOS相关文档
+  - `QUICK_FIX.md` - 快速修复指南
+  - `complete_frameworks_list.txt` - 完整框架列表
+- `ios/RetroArch-1.21.0/` - iOS RetroArch集成版本
 
 ### gam4980 libretro核心
 - `gam4980/src/libretro.c` - libretro接口实现，包含模拟器主逻辑
@@ -73,3 +96,16 @@ gcc -std=c11 -Wall -O3 -fpic -shared -o gam4980_libretro.so libretro.c
 - 使用computed goto和宏优化了CPU模拟性能
 - 支持多种ARM设备的交叉编译
 - ROM文件必须从实际设备导出，项目不包含受版权保护的ROM数据
+
+## iOS开发和签名
+
+### 签名问题解决
+如果遇到证书重复导致的签名问题：
+1. 使用 `security find-identity -v -p codesigning` 查看可用证书
+2. 使用 `./scripts/build-ios.sh` 自动处理签名
+3. 或手动指定证书SHA1：`codesign --force --sign "SHA1_HASH" path/to/file`
+
+### 清理重复证书
+```bash
+security delete-identity -Z "SHA1_HASH" /Users/用户名/Library/Keychains/login.keychain-db
+```

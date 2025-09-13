@@ -57,7 +57,7 @@
 #endif
 
 #if defined(HAVE_COCOA_METAL) || defined(HAVE_COCOATOUCH)
-#import "JITSupport.h"
+#import "../../pkg/apple/JITSupport.h"
 id<ApplePlatform> apple_platform;
 #else
 static id apple_platform;

@@ -1,0 +1,40 @@
+# RetroArch iOS 完整框架和库列表
+# 在 Build Phases → Link Binary With Libraries 中添加
+
+## 系统库 (Libraries)
+libxml2.tbd                 # XML解析（WebDAV需要）
+libiconv.tbd               # 字符编码转换
+libz.tbd                   # 压缩支持
+
+## 必需框架 (Required)
+Foundation.framework        # 基础框架
+UIKit.framework            # UI框架
+CoreGraphics.framework     # 图形框架
+QuartzCore.framework       # 核心动画
+OpenGLES.framework         # OpenGL ES
+AudioToolbox.framework     # 音频工具
+AVFoundation.framework     # 音视频
+CoreAudio.framework        # 核心音频
+GameController.framework   # 游戏控制器
+CoreBluetooth.framework    # 蓝牙
+
+## 可选框架 (Optional)
+CoreHaptics.framework      # 触觉反馈（iOS 13+）
+MetricKit.framework        # 性能指标（iOS 13+）
+Metal.framework            # Metal渲染
+MetalKit.framework         # Metal工具
+CloudKit.framework         # iCloud同步
+
+## 链接标志
+Other Linker Flags:
+-ObjC
+-lxml2
+-weak_framework CoreHaptics
+-weak_framework MetricKit
+
+## 头文件搜索路径
+Header Search Paths:
+$(SDKROOT)/usr/include/libxml2
+$(SRCROOT)
+$(SRCROOT)/pkg/apple
+$(SRCROOT)/pkg/apple/WebServer

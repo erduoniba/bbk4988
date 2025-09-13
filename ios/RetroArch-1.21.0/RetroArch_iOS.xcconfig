@@ -1,0 +1,23 @@
+// RetroArch iOS Build Configuration
+// 自动生成的配置文件，用于修复依赖问题
+
+// Header Search Paths
+HEADER_SEARCH_PATHS = $(inherited) $(SRCROOT) $(SRCROOT)/pkg/apple $(SRCROOT)/pkg/apple/WebServer $(SRCROOT)/pkg/apple/WebServer/GCDWebServer $(SRCROOT)/pkg/apple/WebServer/GCDWebDAVServer $(SRCROOT)/pkg/apple/WebServer/GCDWebUploader
+
+// Framework Search Paths
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(SRCROOT)/pkg/apple
+
+// Library Search Paths
+LIBRARY_SEARCH_PATHS = $(inherited) $(SRCROOT)/pkg/apple/iOS/modules
+
+// Other Linker Flags
+OTHER_LDFLAGS = $(inherited) -ObjC
+
+// Always Search User Paths
+ALWAYS_SEARCH_USER_PATHS = YES
+
+// Enable Modules
+CLANG_ENABLE_MODULES = YES
+
+// Module Map File
+MODULEMAP_FILE = 

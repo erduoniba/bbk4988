@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GCDWebDAVServer.h"
-#import "GCDWebUploader.h"
+#import "GCDWebDAVServer/GCDWebDAVServer.h"
+#import "GCDWebUploader/GCDWebUploader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

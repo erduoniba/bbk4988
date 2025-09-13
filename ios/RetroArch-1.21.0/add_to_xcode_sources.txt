@@ -1,0 +1,26 @@
+# 需要添加到Xcode项目的源文件列表
+# 在Xcode中：Build Phases → Compile Sources → 添加以下文件
+
+## WebServer相关文件
+pkg/apple/WebServer/GCDWebDAVServer/GCDWebDAVServer.m
+pkg/apple/WebServer/GCDWebServer/Core/GCDWebServer.m
+pkg/apple/WebServer/GCDWebServer/Core/GCDWebServerConnection.m
+pkg/apple/WebServer/GCDWebServer/Core/GCDWebServerFunctions.m
+pkg/apple/WebServer/GCDWebServer/Core/GCDWebServerRequest.m
+pkg/apple/WebServer/GCDWebServer/Core/GCDWebServerResponse.m
+pkg/apple/WebServer/GCDWebServer/Requests/GCDWebServerDataRequest.m
+pkg/apple/WebServer/GCDWebServer/Requests/GCDWebServerFileRequest.m
+pkg/apple/WebServer/GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.m
+pkg/apple/WebServer/GCDWebServer/Requests/GCDWebServerURLEncodedFormRequest.m
+pkg/apple/WebServer/GCDWebServer/Responses/GCDWebServerDataResponse.m
+pkg/apple/WebServer/GCDWebServer/Responses/GCDWebServerErrorResponse.m
+pkg/apple/WebServer/GCDWebServer/Responses/GCDWebServerFileResponse.m
+pkg/apple/WebServer/GCDWebServer/Responses/GCDWebServerStreamedResponse.m
+pkg/apple/WebServer/GCDWebUploader/GCDWebUploader.m
+
+## JIT相关文件
+pkg/apple/JITSupport.m
+pkg/apple/JITStub.c
+
+## 其他必要文件
+pkg/apple/WebServer/WebServer.m

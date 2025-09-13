@@ -50,6 +50,18 @@ BA4988模拟器需要以下数据文件（已包含在`bbk_c/BA4988/`目录中�
 
 ## 🔨 构建说明
 
+### 项目管理脚本
+
+#### iOS构建和签名
+```bash
+./scripts/build-ios.sh
+```
+
+#### 项目清理
+```bash
+./scripts/clean.sh
+```
+
 ### 构建gam4980 libretro核心
 
 #### 方法1：使用Zig（推荐）
@@ -100,21 +112,34 @@ cd gam4980/build
 
 ```
 bbk4988/
-├── bbk_c/                    # BA4988模拟器
-│   └── BA4988/              # Windows平台模拟器源码和资源
-│       ├── BA4988.cpp       # 主程序
-│       ├── *.DAT            # ROM和数据文件
-│       └── 4988.ini         # 配置文件
+├── scripts/                  # 构建和管理脚本
+│   ├── build-ios.sh        # iOS构建和签名脚本
+│   ├── clean.sh            # 项目清理脚本
+│   └── fix_*.sh            # 各种修复脚本
 │
-├── gam4980/                  # gam4980 libretro核心
-│   ├── src/                 # 源代码
-│   │   ├── libretro.c      # libretro接口实现
-│   │   ├── s6502.c         # 6502 CPU模拟器
-│   │   └── libretro.h      # libretro API定义
-│   ├── build/              # 构建脚本
-│   └── retroarch/          # RetroArch相关文件
+├── docs/                    # 项目文档
+│   ├── ios/                # iOS相关文档
+│   ├── QUICK_FIX.md        # 快速修复指南
+│   └── complete_frameworks_list.txt # 完整框架列表
 │
-└── CLAUDE.md               # AI辅助开发指南
+├── ios/RetroArch-1.21.0/    # iOS RetroArch集成版本
+│
+├── bbk_c/                   # BA4988模拟器
+│   └── BA4988/             # Windows平台模拟器源码和资源
+│       ├── BA4988.cpp      # 主程序
+│       ├── *.DAT           # ROM和数据文件
+│       └── 4988.ini        # 配置文件
+│
+├── gam4980/                 # gam4980 libretro核心
+│   ├── src/                # 源代码
+│   │   ├── libretro.c     # libretro接口实现
+│   │   ├── s6502.c        # 6502 CPU模拟器
+│   │   └── libretro.h     # libretro API定义
+│   ├── build/             # 构建脚本
+│   └── retroarch/         # RetroArch相关文件
+│
+├── CLAUDE.md              # AI辅助开发指南
+└── README.md              # 项目说明文档
 ```
 
 ## 🛠️ 开发指南
